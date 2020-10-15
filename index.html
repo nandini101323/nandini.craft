@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<title>Index</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+html {
+scroll-behavior: smooth;
+}
+a {
+text-decoration: none;
+}
+a:hover {
+color: black;
+}
+</style>
+<body class="w3-padding-64 w3-animate-opacity">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center w3-dislpay-container" style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
+  <div class="w3-display-middle">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-padding-32 w3-padding w3-hide-large">CLOSE</a>
+
+    <a href="#" onclick="w3_close()" class="w3-bar-item w3-padding-32 w3-xlarge">PORTFOLIO</a> 
+    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-padding-32 w3-xlarge">ABOUT ME</a> 
+    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-padding-32 w3-xlarge">CONTACT</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16">
+  <span class="w3-left w3-padding">Crafts</span>
+  <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">&#9776;</a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px">
+
+  <!-- Push down content on small screens --> 
+  <div class="w3-hide-large" style="margin-top:83px"></div>
+  
+  <!-- Photo grid -->
+  <div class="w3-row-padding">
+    <div class="w3-third">
+      <img src="images/IMG_3666.jpg" class="w3-image w3-margin-bottom w3-hover-grayscale" onclick="onClick(this)">
+      <img src="images/IMG_3669.jpg" class="w3-image w3-margin-bottom w3-hover-grayscale" onclick="onClick(this)">
+      <img src="images/IMG_3880.jpg" class="w3-image w3-margin-bottom w3-hover-grayscale" onclick="onClick(this)">
+    </div>
+
+    <div class="w3-third">
+      <img src="images/IMG_3667.jpg" class="w3-image w3-margin-bottom w3-hover-grayscale" onclick="onClick(this)">
+      <img src="images/IMG_3670.jpg" class="w3-image w3-margin-bottom w3-hover-grayscale" onclick="onClick(this)">
+      <img src="images/IMG_3881.jpg" class="w3-image w3-margin-bottom w3-hover-grayscale" onclick="onClick(this)">
+    </div>
+    
+    <div class="w3-third">
+      <img src="images/IMG_3668.jpg" class="w3-image w3-margin-bottom w3-hover-grayscale" onclick="onClick(this)">
+      <img src="images/IMG_3876.jpg" class="w3-image w3-margin-bottom w3-hover-grayscale" onclick="onClick(this)">
+      <img src="images/IMG_3883.jpg" class="w3-image w3-margin-bottom w3-hover-grayscale" onclick="onClick(this)">
+    </div>
+  </div>
+  
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xlarge w3-display-topright">&times;</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  <!-- About section -->
+  <div class="w3-container w3-brown w3-center w3-text-light-grey w3-padding-32" id="about">
+    <h4 class="w3-xxlarge"><b>About Me</b></h4>
+    <img src="images/WhatsApp Image 2020-04-15 at 12(HWPVLfu3Mgb).jpg" alt="Me" class="w3-image w3-padding-32">
+    <div class="w3-content w3-justify" style="max-width:600px">
+      <h4>Arjun</h4>
+      <p>
+        I am an enthusiastic crafter and am constantly thinking about how to make different things that I see. Recently, as I have morphed into an environmental activist, I have started to work on recyclable crafts and crafts that have less of an impact on the world around us.
+      </p>
+      <p><a href="mailto:nandini.a101323@gmail.com">nandini.a101323@gmail.com</a></p>
+      <p> :+91 9545449860</p>
+      <hr class="w3-opacity">
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact section -->
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdSI-3p2KLSiGMUWoDM9nBg2PtKGWvUFv5mpSX-gn9pK2jMwg/viewform" title="W3Schools Free Online Web Tutorials" style="width: 100%; height: 800px;" id="contact">
+  </iframe>
+
+</div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+</script>
+</body>
+</html>
